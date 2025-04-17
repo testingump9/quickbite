@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - QuickBite</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/checkout.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-title">Checkout</div>
+    <div class="header-actions">
+      <button id="viewCart" class="btn">
+        <span class="material-icons">shopping_cart</span>
+        Cart (<span id="cartCount">0</span>)
+      </button>
+      <div class="user-profile">
+        <img id="userPhoto" src="" alt="User photo">
+        <button class="sign-out-btn" id="signOutBtn">
+          <span class="material-icons">logout</span>
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="checkout-container">
+      <div class="checkout-form">
+        <h2>Delivery Information</h2>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="address">Delivery Address</label>
+            <textarea id="address" rows="4" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked>
+                <div class="payment-content">
+                  <span class="material-icons">money</span>
+                  <span>Cash on Delivery</span>
+                </div>
+              </label>
+              
+              <label class="payment-option">
+                <input type="radio" name="payment" value="online">
+                <div class="payment-content">
+                  <span class="material-icons">credit_card</span>
+                  <span>Pay Online (Coming Soon)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn" id="placeOrderBtn">Place Your Order</button>
+        </form>
+      </div>
+      
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        
+        <div class="order-progress">
+          <div class="progress-bar" id="checkoutProgress"></div>
+          <div class="progress-text">
+            <span id="checkoutProgressText">₹0/₹25</span>
+            <span class="min-order-notice">Minimum order: ₹25</span>
+          </div>
+        </div>
+        
+        <div class="order-items" id="orderItems">
+          <!-- Order items will be loaded here -->
+        </div>
+        
+        <div class="order-total">
+          <div class="total-row">
+            <span>Subtotal</span>
+            <span id="subtotal">₹0.00</span>
+          </div>
+          <div class="total-row">
+            <span>Delivery Fee</span>
+            <span>₹0.00</span>
+          </div>
+          <div class="total-row grand-total">
+            <span>Total</span>
+            <span id="grandTotal">₹0.00</span>
+          </div>
+        </div>
+        
+        <button id="returnToMenu" class="btn btn-outline">
+          <span class="material-icons">arrow_back</span>
+          Back to Menu
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

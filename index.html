@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickBite - Instant Food Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="hero">
+      <h1>QuickBite</h1>
+      <p class="tagline">Snacks delivered in a flash!</p>
+      
+      <div class="auth-box">
+        <button id="googleSignIn" class="btn google-btn">
+          <img src="images/icons/google.png" alt="Google icon">
+          Sign in with Google
+        </button>
+        
+        <div class="auth-message" id="authMessage"></div>
+        
+        <div class="loader" id="loader" style="display: none;">
+          <div class="spinner"></div>
+          <p>Signing you in...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

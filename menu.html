@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickBite Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-title">QuickBite Menu</div>
+    <div class="header-actions">
+      <button id="viewCart" class="btn">
+        <span class="material-icons">shopping_cart</span>
+        Cart (<span id="cartCount">0</span>)
+      </button>
+      <div class="user-profile">
+        <img id="userPhoto" src="" alt="User photo">
+        <button class="sign-out-btn" id="signOutBtn">
+          <span class="material-icons">logout</span>
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="menu-filters">
+      <input type="text" id="searchInput" placeholder="Search menu items...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="snacks">Snacks</option>
+        <option value="drinks">Drinks</option>
+        <option value="meals">Meals</option>
+      </select>
+    </div>
+
+    <div class="menu-container" id="menuContainer">
+      <!-- Menu items will be loaded here -->
+    </div>
+  </main>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <span class="close-cart">&times;</span>
+    </div>
+    
+    <div class="cart-items" id="cartItems"></div>
+    
+    <div class="min-order-progress">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-text" id="progressText">₹0/₹25</div>
+    </div>
+    
+    <div class="item-suggestions" id="itemSuggestions">
+      <h4>Add more to reach ₹25:</h4>
+      <div class="suggestion-list"></div>
+    </div>
+    
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn checkout-btn" id="checkoutBtn" disabled>Checkout</button>
+    </div>
+  </div>
+
+  <script src="js/firebase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/notifications.js"></script>
+</body>
+</html>
